@@ -10,14 +10,12 @@
 #import "TrainleView.h"
 #import "RectContentView.h"
 #import "ShowViewController.h"
-#import "DDPanGesRecognizer.h"
-#import <UIKit/UIGestureRecognizerSubclass.h>
 
 @interface DDPopoverView ()<UIGestureRecognizerDelegate>
 {
     CGFloat triangleHeight;    //三角形的高
     CGRect basicSelfViewRect;  //self的初始位置，用于做动画
-    DDPanGesRecognizer *panGes;
+    UIPanGestureRecognizer *panGes;
     CGFloat bgCornerRadius;
 }
 
@@ -64,7 +62,7 @@
         [self addSubview:_contentView];
         [_contentView release];
         
-        panGes = [[DDPanGesRecognizer alloc] initWithTarget:self action:@selector(HandlePaningGesture:)];
+        panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(HandlePaningGesture:)];
         panGes.delegate = self;
         [self.contentView addGestureRecognizer:panGes];
         [panGes release];

@@ -10,7 +10,6 @@
 		49136DE11AE7FD3D005C116F /* DDPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49136DDC1AE7FD3D005C116F /* DDPopoverView.m */; };
 		49136DE21AE7FD3D005C116F /* RectContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49136DDE1AE7FD3D005C116F /* RectContentView.m */; };
 		49136DE31AE7FD3D005C116F /* TrainleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49136DE01AE7FD3D005C116F /* TrainleView.m */; };
-		49136DE61AE7FD5B005C116F /* DDPanGesRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49136DE51AE7FD5B005C116F /* DDPanGesRecognizer.m */; };
 		49B893D21AE751D6003A2FA8 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B893D11AE751D6003A2FA8 /* ShowViewController.m */; };
 		49B893D51AE76A3D003A2FA8 /* SecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B893D41AE76A3D003A2FA8 /* SecViewController.m */; };
 		49F0370D1AE50FD7000D187F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F0370C1AE50FD7000D187F /* main.m */; };
@@ -39,8 +38,6 @@
 		49136DDE1AE7FD3D005C116F /* RectContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectContentView.m; sourceTree = "<group>"; };
 		49136DDF1AE7FD3D005C116F /* TrainleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainleView.h; sourceTree = "<group>"; };
 		49136DE01AE7FD3D005C116F /* TrainleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainleView.m; sourceTree = "<group>"; };
-		49136DE41AE7FD5B005C116F /* DDPanGesRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPanGesRecognizer.h; sourceTree = "<group>"; };
-		49136DE51AE7FD5B005C116F /* DDPanGesRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPanGesRecognizer.m; sourceTree = "<group>"; };
 		49B893D01AE751D6003A2FA8 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		49B893D11AE751D6003A2FA8 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
 		49B893D31AE76A3D003A2FA8 /* SecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecViewController.h; sourceTree = "<group>"; };
@@ -88,8 +85,6 @@
 				49136DDE1AE7FD3D005C116F /* RectContentView.m */,
 				49136DDF1AE7FD3D005C116F /* TrainleView.h */,
 				49136DE01AE7FD3D005C116F /* TrainleView.m */,
-				49136DE41AE7FD5B005C116F /* DDPanGesRecognizer.h */,
-				49136DE51AE7FD5B005C116F /* DDPanGesRecognizer.m */,
 				49E727431AE9D3C500931B83 /* DDPopoverViewDelegate.h */,
 			);
 			path = popView;
@@ -267,7 +262,6 @@
 				49136DE21AE7FD3D005C116F /* RectContentView.m in Sources */,
 				49136DE11AE7FD3D005C116F /* DDPopoverView.m in Sources */,
 				49F0370D1AE50FD7000D187F /* main.m in Sources */,
-				49136DE61AE7FD5B005C116F /* DDPanGesRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
