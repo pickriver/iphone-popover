@@ -9,7 +9,6 @@
 #import "DDPopoverView.h"
 #import "TrainleView.h"
 #import "RectContentView.h"
-#import "ShowViewController.h"
 
 @interface DDPopoverView ()<UIGestureRecognizerDelegate>
 {
