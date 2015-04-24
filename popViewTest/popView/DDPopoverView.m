@@ -158,8 +158,7 @@
         
         if (newY <= basicSelfViewRect.origin.y) {
             newY = basicSelfViewRect.origin.y;
-            
-            //            panGes.enabled = NO;
+
             self.innerScrollView.panGestureRecognizer.enabled = YES;
         }
         
@@ -191,7 +190,6 @@
             [UIView animateWithDuration:0.1 animations:^{
                 self.frame = basicSelfViewRect;
             }completion:^(BOOL finished) {
-                //                panGes.enabled = NO;
                 self.innerScrollView.panGestureRecognizer.enabled = YES;
             }];
         }

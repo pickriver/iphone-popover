@@ -104,7 +104,7 @@
     cell.textLabel.text = [dataArr objectAtIndex:indexPath.row];
     
     if (indexPath.row == 0) {
-        cell.contentView.backgroundColor = [UIColor cyanColor];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
     }
     else
         cell.contentView.backgroundColor = [UIColor whiteColor];

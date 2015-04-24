@@ -46,12 +46,16 @@
     [self.view addSubview:popView];
     [popView release];
     
+    //1.单层 没有navigation 栈
+//    [self setPopViewContentView];
+    
+    //2.嵌入vc的navigation 栈
     ShowViewController *showVC = [[ShowViewController alloc] init];
     [popView setVCInNavigationController:showVC contentInSet:5];
     showVC.delegate = popView;
     [showVC release];
     
-//    [self setPopViewContentView];
+    
 }
 
 -(void) setPopViewContentView
