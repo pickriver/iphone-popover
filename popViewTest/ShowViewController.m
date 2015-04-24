@@ -22,6 +22,7 @@
 -(void) dealloc
 {
     [dataArr release];
+    self.delegate = nil;
     [super dealloc];
 }
 
@@ -40,21 +41,21 @@
     contentView.scrollEnabled = YES;
     contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     contentView.showsVerticalScrollIndicator = NO;
-//    contentView.panGestureRecognizer.delegate = self;
-//    contentView.bounces = NO;
+    //    contentView.panGestureRecognizer.delegate = self;
+    //    contentView.bounces = NO;
     [self.view addSubview:contentView];
     
-//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-//    btn1.frame = CGRectMake(50 ,20 ,100, 45);
-//    btn1.titleLabel.textAlignment = NSTextAlignmentLeft;
-//    btn1.backgroundColor = [UIColor yellowColor];
-//    btn1.layer.borderWidth = 0.5;
-//    btn1.layer.borderColor =[UIColor blueColor].CGColor;
-//    [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-//    [btn1 setTitle:@"click" forState:UIControlStateNormal];
-//    [btn1 addTarget:self action:@selector(openClick) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn1];
+    //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    btn1.frame = CGRectMake(50 ,20 ,100, 45);
+    //    btn1.titleLabel.textAlignment = NSTextAlignmentLeft;
+    //    btn1.backgroundColor = [UIColor yellowColor];
+    //    btn1.layer.borderWidth = 0.5;
+    //    btn1.layer.borderColor =[UIColor blueColor].CGColor;
+    //    [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    //    [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    //    [btn1 setTitle:@"click" forState:UIControlStateNormal];
+    //    [btn1 addTarget:self action:@selector(openClick) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:btn1];
     
     
 }
@@ -72,7 +73,10 @@
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
+    //回传外层控件
+    if ([_delegate respondsToSelector:@selector(affectDidScrollView:)]) {
+        [_delegate affectDidScrollView:scrollView];
+    }
 }
 
 #pragma mark -- UITableViewDataSource
@@ -117,19 +121,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return;
-    SecViewController *vc = [SecViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+//    SecViewController *vc = [SecViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

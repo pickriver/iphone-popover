@@ -103,23 +103,17 @@
             break;
         }
     }
-    
-    if (self.innerScrollView)
-    {
-        self.innerScrollView.delegate = self;
-    }
 }
 
--(void) scrollViewDidScroll:(UIScrollView *)scrollView
+-(void) affectDidScrollView:(UIScrollView *)scrollView
 {
-    NSLog(@"啦啦啦啦");
     static CGFloat lastPointY = 0.0;
     if (scrollView.contentOffset.y < 0)
     {
         panGes.enabled = YES;
         [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0)];
     }
-    else 
+    else
     {
         if (self.frame.origin.y > basicSelfViewRect.origin.y)
         {
@@ -132,49 +126,7 @@
 
 #pragma mark -- UIGestureRecognizerDelegate
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    UIView *view = gestureRecognizer.view;
-    if ([view isKindOfClass:[UITableView class]]) {
-        
-    }
-    
-    return YES;
-}
-
 -(BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-
-//-(BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-//{
-//    UIView *one = gestureRecognizer.view;
-//    UIView *two = otherGestureRecognizer.view;
-//    
-//    NSLog(@"one:%@",[one class]);
-//    NSLog(@"two:%@",[two class]);
-//    
-//    if ([otherGestureRecognizer.view isKindOfClass:[UIScrollView class]])
-//    {
-//        UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
-//        
-//        if (scrollView.contentOffset.y > 0)
-//        {
-//            return NO;
-//        }
-//        else
-//        {
-//            otherGestureRecognizer.enabled = NO;
-//            otherGestureRecognizer.enabled = YES;
-//            return YES;
-//        }
-//    }
-//    
-//    return NO;
-//}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     return YES;
 }
@@ -187,7 +139,7 @@
     }
     
     CGPoint touchPoint = [recognizer locationInView:self.superview];
-
+    
     static CGFloat orignalY = 0.0;
     
     if (recognizer.state == UIGestureRecognizerStateBegan)
@@ -200,14 +152,14 @@
         
         orignalY = touchPoint.y;
         
-//        NSLog(@"amountValue:%f",amountValue);
+        //        NSLog(@"amountValue:%f",amountValue);
         
         CGFloat newY = self.frame.origin.y + amountValue;
         
         if (newY <= basicSelfViewRect.origin.y) {
             newY = basicSelfViewRect.origin.y;
             
-//            panGes.enabled = NO;
+            //            panGes.enabled = NO;
             self.innerScrollView.panGestureRecognizer.enabled = YES;
         }
         
@@ -239,13 +191,13 @@
             [UIView animateWithDuration:0.1 animations:^{
                 self.frame = basicSelfViewRect;
             }completion:^(BOOL finished) {
-//                panGes.enabled = NO;
+                //                panGes.enabled = NO;
                 self.innerScrollView.panGestureRecognizer.enabled = YES;
             }];
         }
         else
         {
-           //收起
+            //收起
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.alpha = 0;
                 self.frame = basicSelfViewRect;

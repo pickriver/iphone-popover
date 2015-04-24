@@ -48,6 +48,7 @@
     
     ShowViewController *showVC = [[ShowViewController alloc] init];
     [popView setVCInNavigationController:showVC contentInSet:5];
+    showVC.delegate = popView;
     [showVC release];
     
 //    [self setPopViewContentView];

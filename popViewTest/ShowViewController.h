@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDPopoverViewDelegate.h"
 
 @interface ShowViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
+
+@property (nonatomic,assign) id<DDPopoverViewDelegate> delegate;
 
 @end

@@ -10,6 +10,5 @@
 
 @protocol DDPopoverViewDelegate <NSObject>
 
--(void) 
-
+-(void) affectDidScrollView:(UIScrollView *) scrollView;
 @end
